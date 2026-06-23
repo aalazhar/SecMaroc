@@ -42,12 +42,10 @@ import React from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
-
   href?: string;
-
   variant?: "primary" | "outline";
-
   type?: "button" | "submit";
+  className?: string;
 }
 
 export default function Button({
