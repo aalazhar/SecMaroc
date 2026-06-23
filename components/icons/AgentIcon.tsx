@@ -1,0 +1,28 @@
+import { SVGProps } from "react";
+
+export default function AgentIcon(
+  props: SVGProps<SVGSVGElement>
+) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <circle
+        cx="12"
+        cy="8"
+        r="4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+
+      <path
+        d="M4 21v-2a8 8 0 0116 0v2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
