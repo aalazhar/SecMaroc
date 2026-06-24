@@ -183,14 +183,18 @@ export default function WhyUs() {
             </motion.div>
 
             <motion.div
-              className="mt-10 space-y-7"
+              className="mt-10"
               variants={listVariants}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
             >
               {whyUs.map((item) => (
-                <motion.div key={item.title} variants={itemVariants}>
+                <motion.div
+                  key={item.title}
+                  variants={itemVariants}
+                  className="border-b border-black/10 last:border-b-0 pb-3 pt-7"
+                >
                   <WhyPoint
                     title={item.title}
                     text={item.description}
