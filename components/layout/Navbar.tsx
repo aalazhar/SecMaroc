@@ -62,7 +62,7 @@ export default function Navbar() {
       <Container>
         <div
           className="
-          h-[72px]
+          h-[96px]
 
           flex
           items-center
@@ -71,8 +71,8 @@ export default function Navbar() {
         >
           {/* LOGO */}
 
-          <Link href="/" onClick={() => setOpen(false)}>
-            <Logo />
+          <Link href="/" onClick={() => setOpen(false)} className="">
+            <Logo src="/images/logo/EdenLogo2.png"/>
           </Link>
 
           {/* DESKTOP MENU */}

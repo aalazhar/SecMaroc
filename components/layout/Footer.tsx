@@ -305,7 +305,7 @@ gap-12
 "
       >
         <div>
-          <Logo />
+          <Logo src="/images/logo/EdenLogo4.png"/>
 
           <p className="mt-5 text-sm text-white/40 leading-7 max-w-xs">
             Votre spécialiste en sécurité privée, gardiennage et surveillance au

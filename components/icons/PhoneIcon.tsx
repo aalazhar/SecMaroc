@@ -1,36 +1,39 @@
-import {SVGProps} from "react";
+import React from "react";
 
-export default function PhoneIcon(
-props:SVGProps<SVGSVGElement>
-){
+interface PhoneIconProps extends React.SVGProps<SVGSVGElement> {}
 
-return(
-
-<svg
-viewBox="0 0 24 24"
-fill="none"
-{...props}
->
-
-<path
-d="M22 16.92v3a2 2 0 01-2.18 2
-19.79 19.79 0 01-8.63-3.07
-A19.5 19.5 0 014.5 10.5
-1 9.79 9.79 0 011.43 1.83
-A2 2 0 013.41 0h3a2 2 0 012 1.72
-c.12.96.36 1.9.7 2.81
-a2 2 0 01-.45 2.11L7.91 7.91
-a16 16 0 006.29 6.29l.79-.79
-a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"
-
-stroke="currentColor"
-strokeWidth="2"
-strokeLinecap="round"
-strokeLinejoin="round"
-
-/>
-
-</svg>
-
-)
+export default function PhoneIcon({
+  className = "",
+  ...props
+}: PhoneIconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      {...props}
+    >
+      <path
+        d="
+          M22 16.92v3a2 2 0 0 1-2.18 2
+          19.8 19.8 0 0 1-8.63-3.07
+          19.5 19.5 0 0 1-6-6
+          A19.8 19.8 0 0 1 2.12 4.18
+          2 2 0 0 1 4.11 2h3
+          a2 2 0 0 1 2 1.72
+          c.12.9.33 1.77.62 2.6
+          a2 2 0 0 1-.45 2.11L8.01 9.7
+          a16 16 0 0 0 6 6l1.27-1.27
+          a2 2 0 0 1 2.11-.45
+          c.83.29 1.7.5 2.6.62
+          A2 2 0 0 1 22 16.92Z
+        "
+      />
+    </svg>
+  );
 }

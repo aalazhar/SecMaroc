@@ -43,30 +43,57 @@
 //   );
 // }
 
+// export default function Logo() {
+//   return (
+//     <div
+//       className="
+// inline-flex
+// items-center
+// gap-3
+// font-bebas
+// text-3xl
+// tracking-[3px]
+// text-dark
+// "
+//     >
+//       <span
+//         className="
+// w-2
+// h-2
+// bg-red
+// rounded-full
+// animate-pulse
+// "
+//       />
+//       GRS MAROC
+//     </div>
+//   );
+// }
 
-export default function Logo() {
+import Image from "next/image";
+
+interface LogoProps {
+  src: string;
+  alt?: string;
+}
+
+export default function Logo({
+  src,
+  alt = "Eden Baco Security",
+}: LogoProps) {
   return (
-    <div
+    <Image
+      src={src}
+      alt={alt}
+      width={200}
+      height={65}
+      priority
       className="
-inline-flex
-items-center
-gap-3
-font-bebas
-text-3xl
-tracking-[3px]
-text-dark
-"
-    >
-      <span
-        className="
-w-2
-h-2
-bg-red
-rounded-full
-animate-pulse
-"
-      />
-      GRS MAROC
-    </div>
+        w-[140px]
+        sm:w-[150px]
+        md:w-[160px]
+        h-auto
+      "
+    />
   );
 }
