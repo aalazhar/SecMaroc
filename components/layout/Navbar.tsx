@@ -13,13 +13,16 @@ const navLinks = [
     href: "#services",
   },
   {
-    label: "Pourquoi nous",
+    label: "Pourquoi EDEN BACO",
     href: "#pourquoi",
   },
   {
-    label: "Clients",
+    label: "Nos Clients",
     href: "#clients",
   },
+  { label: "Contact", 
+    href: "#contact" 
+  }
 ];
 
 export default function Navbar() {
@@ -40,58 +43,27 @@ export default function Navbar() {
 
   return (
     <header
-      className={`
-      fixed
-      top-0
-      left-0
-      right-0
-      z-50
-
-      transition-all
-      duration-300
-
-      ${scrolled ? "bg-[#F4F1E8]/95 shadow-sm" : "bg-[#F4F1E8]/90"}
-
-      backdrop-blur-xl
-
-      border-b
-      border-black/10
-
-      `}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-[#F4F1E8]/95 shadow-sm" : "bg-[#F4F1E8]/90"
+      } backdrop-blur-xl border-b border-black/10`}
     >
       <Container>
-        <div
-          className="
-          h-[96px]
-
-          flex
-          items-center
-          justify-between
-          "
-        >
+        <div className="h-[96px] flex items-center justify-between">
           {/* LOGO */}
 
-          <Link href="/" onClick={() => setOpen(false)} className="">
-            <Logo src="/images/logo/EdenLogo2.png"/>
+          <Link href="/" onClick={() => setOpen(false)}>
+            <Logo src="/images/logo/EdenLogoNavbar.png" />
           </Link>
 
           {/* DESKTOP MENU */}
 
-          <nav
-            className="
-            hidden
-            lg:flex
-
-            items-center
-            gap-9
-            "
-          >
+          <nav className="hidden lg:flex items-center gap-9">
             {navLinks.map((item) => (
               <NavItem key={item.href} {...item} />
             ))}
 
             <Link href="#contact">
-              <Button >Devis gratuit</Button>
+              <Button>Demander un devis</Button>
             </Link>
           </nav>
 
@@ -100,57 +72,24 @@ export default function Navbar() {
           <button
             aria-label="Menu"
             onClick={() => setOpen(!open)}
-            className="
-            lg:hidden
-
-            w-10
-            h-10
-
-            flex
-            flex-col
-            justify-center
-            items-center
-
-            gap-1.5
-
-            "
+            className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5"
           >
             <span
-              className={`
-              w-6
-              h-[2px]
-              bg-[#1E1E1C]
-
-              transition
-
-              ${open ? "rotate-45 translate-y-2" : ""}
-              `}
+              className={`w-6 h-[2px] bg-[#1E1E1C] transition ${
+                open ? "rotate-45 translate-y-2" : ""
+              }`}
             />
 
             <span
-              className={`
-              w-6
-              h-[2px]
-              bg-[#1E1E1C]
-
-              transition
-
-              ${open ? "opacity-0" : ""}
-
-              `}
+              className={`w-6 h-[2px] bg-[#1E1E1C] transition ${
+                open ? "opacity-0" : ""
+              }`}
             />
 
             <span
-              className={`
-              w-6
-              h-[2px]
-              bg-[#1E1E1C]
-
-              transition
-
-              ${open ? "-rotate-45 -translate-y-2" : ""}
-
-              `}
+              className={`w-6 h-[2px] bg-[#1E1E1C] transition ${
+                open ? "-rotate-45 -translate-y-2" : ""
+              }`}
             />
           </button>
         </div>
@@ -158,50 +97,24 @@ export default function Navbar() {
         {/* MOBILE MENU */}
 
         <div
-          className={`
-          lg:hidden
-
-          overflow-hidden
-
-          transition-all
-          duration-300
-
-
-          ${open ? "max-h-96 pb-6" : "max-h-0"}
-
-          `}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+            open ? "max-h-96 pb-6" : "max-h-0"
+          }`}
         >
-          <nav
-            className="
-            flex
-            flex-col
-            gap-5
-            pt-4
-            "
-          >
+          <nav className="flex flex-col gap-5 pt-4">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="
-                  uppercase
-                  text-xs
-                  tracking-[2px]
-
-                  text-black/60
-
-                  hover:text-[#C8102E]
-
-                  transition
-                  "
+                className="uppercase text-xs tracking-[2px] text-black/60 hover:text-[#C8102E] transition"
               >
                 {item.label}
               </Link>
             ))}
 
             <Link href="#contact" onClick={() => setOpen(false)}>
-              <Button className="w-full">Devis gratuit</Button>
+              <Button className="w-full">Demander un devis</Button>
             </Link>
           </nav>
         </div>
@@ -214,49 +127,11 @@ function NavItem({ label, href }: { label: string; href: string }) {
   return (
     <Link
       href={href}
-      className="
-      group
-
-      relative
-
-      text-[13px]
-
-      uppercase
-      tracking-[1px]
-
-      font-medium
-
-      text-black/50
-
-      hover:text-[#1E1E1C]
-
-      transition
-      "
+      className="group relative text-[13px] uppercase tracking-[1px] font-medium text-black/50 hover:text-[#1E1E1C] transition"
     >
       {label}
 
-      <span
-        className="
-        absolute
-
-        left-0
-        right-0
-
-        -bottom-1
-
-        h-[1px]
-
-        bg-[#C8102E]
-
-        scale-x-0
-
-        group-hover:scale-x-100
-
-        transition-transform
-
-        origin-left
-        "
-      />
+      <span className="absolute left-0 right-0 -bottom-1 h-[1px] bg-[#C8102E] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
     </Link>
   );
 }

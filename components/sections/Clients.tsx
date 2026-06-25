@@ -5,14 +5,13 @@ import Container from "@/components/ui/Container";
 import { motion, Variants } from "framer-motion";
 
 const clients = [
-  "ONCF",
-  "Marjane",
-  "Lydec",
-  "CIH Bank",
-  "Sofitel",
-  "Tanger Med",
-  "OCP Group",
-  "Attijariwafa",
+  "La Société VFS Global",
+  "Laboratoire Central d'Analyses Médicales",
+  "Le Centre de Radiologie Zerktouni 59",
+  "Amical Faraj",
+  "Société Dounia Z",
+  "Société Miclaine ( Groupe Richbond )",
+  "Société Diouane 26 ( Groupe Richbond )"
 ];
 
 const headerVariants: Variants = {

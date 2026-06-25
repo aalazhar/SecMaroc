@@ -277,7 +277,7 @@
 
 import Logo from "@/components/ui/Logo";
 
-import { PhoneIcon, MailIcon } from "@/components/icons";
+import { PhoneIcon, MailIcon, LocationIcon } from "@/components/icons";
 
 const services = [
   "Solution de sécurité",
@@ -288,39 +288,37 @@ const services = [
   "Maître-chien",
 ];
 
-const cities = ["Casablanca", "Marrakech", "Rabat", "Agadir", "Canada"];
+const cities = ["Casablanca"];
 
 export default function Footer() {
   return (
     <footer className="bg-[#141412] py-16 px-6 border-t border-white/10">
-      <div
-        className="
-max-w-7xl
-mx-auto
-grid
-grid-cols-1
-sm:grid-cols-2
-lg:grid-cols-4
-gap-12
-"
-      >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr]  gap-12 ">
         <div>
-          <Logo src="/images/logo/EdenLogo4.png"/>
+          <Logo src="/images/logo/EdenLogoFooter.png" />
 
-          <p className="mt-5 text-sm text-white/40 leading-7 max-w-xs">
-            Votre spécialiste en sécurité privée, gardiennage et surveillance au
-            Maroc.
-          </p>
+          {/* <p className="text-sm text-white/40 leading-7 max-w-xs">
+            Votre spécialiste en sécurité privée, gardiennage et surveillance.
+          </p> */}
 
           <div className="mt-6 space-y-3 text-sm text-white/50">
             <div className="flex gap-3 items-center">
               <PhoneIcon className="w-4 h-4 text-red" />
-              +212 5 22 41 68 68
+              +212 661 370 673 / +212 661 187 105
             </div>
 
             <div className="flex gap-3 items-center">
               <MailIcon className="w-4 h-4 text-red" />
-              contact@grsmaroc.ma
+              eden.baco01@gmail.com
+            </div>
+
+            <div className="flex gap-3 items-start">
+              <LocationIcon className="w-4 h-4 text-red mt-1 shrink-0" />
+              <span>
+                HAY SALAM 1 GROUPE A, RUE 915
+                <br />
+                AHL LOUGHLAM 20000, CASABLANCA
+              </span>
             </div>
           </div>
         </div>
@@ -360,36 +358,17 @@ gap-12
 
           <ul className="space-y-3">
             <li className="text-sm text-white/40">Qui sommes-nous</li>
-
             <li className="text-sm text-white/40">Nos clients</li>
-
             <li className="text-sm text-white/40">Galerie</li>
-
             <li className="text-sm text-white/40">Contact</li>
           </ul>
         </div>
       </div>
 
-      <div
-        className="
-max-w-7xl
-mx-auto
-mt-14
-pt-8
-border-t
-border-white/10
-flex
-flex-col
-md:flex-row
-gap-4
-justify-between
-text-xs
-text-white/30
-"
-      >
-        <p>© GRS Maroc 2026 — Tous droits réservés.</p>
+      <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 justify-between text-xs text-white/30">
+        <p>© Eden Baco 2026 — Tous droits réservés.</p>
 
-        <p>Casablanca · Marrakech · Rabat · Agadir</p>
+        <p> · Casablanca · </p>
       </div>
     </footer>
   );

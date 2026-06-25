@@ -31,6 +31,7 @@ import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
 import Clients from "@/components/sections/Clients";
 import CTA from "@/components/sections/Cta";
+import Equipements from "@/components/sections/Equipements";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
         <Stats />
 
         <Services />
+
+        <Equipements/>
 
         <WhyUs />
 

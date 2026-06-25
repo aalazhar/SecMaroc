@@ -793,7 +793,7 @@ export default function CTA() {
                   Demander un devis gratuit
                 </Button>
 
-                <Button variant="outline">Nous appeler</Button>
+                {/* <Button variant="outline">Nous appeler</Button> */}
               </motion.div>
 
               <motion.div

@@ -1,75 +1,53 @@
-import React from "react";
-
 import {
   CheckBadgeIcon,
   LightningIcon,
-  LocationIcon,
   ClipboardIcon,
+  ShieldIcon,
+  AgentIcon,
 } from "@/components/icons";
 
-
 export interface WhyUs {
-
   id: number;
-
   title: string;
-
   description: string;
-
-  icon: React.ComponentType<
-    React.SVGProps<SVGSVGElement>
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>
   >;
-
 }
 
-
-export const whyUs: WhyUs[] = [
-
+export const whyUs = [
   {
     id: 1,
-
-    title: "Agents certifiés & formés",
-
+    title: "Expertise & Expérience",
     description:
-      "Tous nos agents passent par une formation rigoureuse et sont certifiés par les autorités compétentes marocaines.",
-
-    icon: CheckBadgeIcon
+    "Notre savoir-faire dans la sécurité privée nous permet de proposer des solutions efficaces pour les entreprises, institutions et particuliers.",
+    icon: ShieldIcon,
   },
-
-
   {
     id: 2,
-
-    title: "Intervention rapide 24/7",
-
+    title: "Solutions Sur Mesure",
     description:
-      "Notre centre opérationnel fonctionne en continu afin de garantir une réponse immédiate aux incidents.",
-
-    icon: LightningIcon
+    "Chaque client est unique. Nous analysons vos besoins afin de concevoir un dispositif de sécurité parfaitement adapté.",
+    icon: ClipboardIcon,
   },
-
-
   {
     id: 3,
-
-    title: "Présence nationale",
-
+    title: "Réactivité 24h/24",
     description:
-      "Présence à Casablanca, Marrakech, Rabat, Agadir et représentation internationale pour nos clients globaux.",
-
-    icon: LocationIcon
+    "Nos équipes restent disponibles jour et nuit pour répondre rapidement à toute situation ou demande urgente.",
+    icon: LightningIcon,
   },
-
-
   {
     id: 4,
-
-    title: "Solutions sur mesure",
-
+    title: "Discrétion & Confidentialité",
     description:
-      "Chaque client bénéficie d'une analyse des risques et d'une stratégie adaptée à ses besoins.",
-
-    icon: ClipboardIcon
-  }
-
+    "La protection de votre vie privée et de vos informations est au cœur de notre engagement.",
+    icon: AgentIcon,
+  },
+  {
+    id: 5,
+    title: "Professionnalisme & Excellence",
+    description:
+    "Des agents qualifiés, formés et certifiés qui interviennent avec rigueur, sérieux et efficacité.",
+    icon: CheckBadgeIcon,
+  },
 ];

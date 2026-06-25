@@ -176,9 +176,9 @@ export default function WhyUs() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <SectionHeader
-                eyebrow="Pourquoi nous choisir"
-                title="La sécurité est notre seule priorité"
-                description="Depuis plus de 12 ans, GRS Maroc protège les entreprises, institutions et particuliers à travers tout le Royaume."
+                eyebrow="Pourquoi choisir EDEN BACO"
+                title="Un partenaire de confiance pour votre sécurité"
+                description="Nous combinons expertise, réactivité et professionnalisme pour offrir des solutions de sécurité fiables, adaptées aux besoins spécifiques de chaque client."
               />
             </motion.div>
 
@@ -218,17 +218,23 @@ export default function WhyUs() {
               <div className="absolute top-0 left-0 right-0 h-1 bg-[#C8102E]" />
 
               <p className="uppercase tracking-[3px] text-xs font-semibold text-[#C8102E] mb-2">
-                Notre engagement
+                Nos valeurs
               </p>
 
               <h3 className="font-['Bebas_Neue'] text-5xl leading-tight text-[#F4F1E8]">
-                Votre sécurité.
+                Votre confiance.
                 <br />
-                Notre réputation.
+                Notre engagement.
               </h3>
             </div>
+            <p className="mt-6 text-[#F4F1E8]/70 leading-7">
+              Chez EDEN BACO, la sécurité va au-delà de la simple protection.
+              Nous construisons une relation de confiance durable grâce à notre
+              professionnalisme, notre réactivité et notre engagement constant
+              envers l'excellence.
+            </p>
 
-            <motion.div
+            {/* <motion.div
               className="absolute right-0 bottom-0 w-[200px] h-[160px] bg-[#C8102E] flex flex-col items-center justify-center text-center"
               variants={badgeVariants}
             >
@@ -236,6 +242,18 @@ export default function WhyUs() {
 
               <p className="text-xs uppercase tracking-[2px] text-white/80">
                 Ans de confiance
+              </p>
+            </motion.div> */}
+            <motion.div
+              className="absolute right-0 bottom-0 w-[220px] h-[160px] bg-[#C8102E] flex flex-col items-center justify-center text-center"
+              variants={badgeVariants}
+            >
+              <div className="font-['Bebas_Neue'] text-5xl text-white">
+                24/7
+              </div>
+
+              <p className="text-xs uppercase tracking-[2px] text-white/80 max-w-[140px]">
+                Disponibilité & Réactivité
               </p>
             </motion.div>
           </motion.div>

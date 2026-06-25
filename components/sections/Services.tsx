@@ -72,16 +72,21 @@ export default function Services() {
   return (
     <section id="services" className="py-24 bg-[#EDE9DF]">
       <Container>
-      <motion.div
+        <motion.div
           variants={headerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <SectionHeader
+          {/* <SectionHeader
             eyebrow="Nos prestations"
             title="Des solutions de sécurité sur mesure"
             description="Nous intervenons dans tous les domaines de la sécurité privée avec des équipes formées, certifiées et disponibles à tout moment."
+          /> */}
+          <SectionHeader
+            eyebrow="Nos Services"
+            title="Des solutions de sécurité adaptées à chaque besoin"
+            description="EDEN BACO met à votre disposition des agents qualifiés, des équipes réactives et des solutions de sécurité sur mesure pour protéger vos biens, vos collaborateurs et vos infrastructures."
           />
         </motion.div>
 
