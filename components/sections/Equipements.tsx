@@ -374,7 +374,7 @@ export default function Equipements() {
               <div className="absolute inset-0 bg-[#C8102E]/25 blur-[50px] rounded-full scale-125" />
 
               <Image
-                src="/images/logo/officialShield.png"
+                src="/images/logo/shieldOfficial.png"
                 alt="Eden Baco"
                 width={190}
                 height={190}
