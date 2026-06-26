@@ -813,7 +813,7 @@ export default function CTA() {
                 <span>
                   Disponible 24h/24 —
                   <strong className="text-white ml-2">
-                    +212 5 22 41 68 68
+                    00212661370673 / 00212661187105
                   </strong>
                 </span>
               </motion.div>

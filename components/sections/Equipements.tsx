@@ -374,12 +374,12 @@ export default function Equipements() {
               <div className="absolute inset-0 bg-[#C8102E]/25 blur-[50px] rounded-full scale-125" />
 
               <Image
-                src="/images/logo/shieldOfficial.png"
+                src="/images/logo/shieldOfficial-filtered.png"
                 alt="Eden Baco"
                 width={190}
                 height={190}
                 priority
-                className="relative w-[190px] h-auto drop-shadow-[0_0_40px_rgba(200,16,46,.35)]"
+                className="relative w-[190px] h-auto drop-shadow-[0_0_40px_rgba(200,16,46,.15)] opacity-85"
               />
             </motion.div>
           </div>
