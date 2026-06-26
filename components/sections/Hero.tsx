@@ -31,9 +31,7 @@
 
 //             <h1 className="font-['Bebas_Neue'] text-[#1E1E1C] tracking-[2px] leading-[.95] text-6xl sm:text-7xl xl:text-[96px] mb-7 opacity-0 animate-[fadeUp_.8s_ease_.4s_forwards]">
 //               Protéger ce qui
-//               <span className="block text-[#C8102E]">
-//                 compte vraiment
-//               </span>
+//               <span className="block text-[#C8102E]">compte vraiment</span>
 //             </h1>
 
 //             <p className="text-black/50 font-light text-base leading-8 max-w-[480px] mb-10 opacity-0 animate-[fadeUp_.8s_ease_.6s_forwards]">
@@ -92,17 +90,25 @@
 //         fill="#C8102E"
 //         opacity=".15"
 //       />
+//       <image
+//         href="/images/logo/officialShield.svg"
+//         x="61"
+//         y="70"
+//         width="160"
+//         height="160"
+//         preserveAspectRatio="xMidYMid meet"
+//       />
 
-//       <text
+//       {/* <text
 //         x="140"
 //         y="175"
 //         textAnchor="middle"
 //         fill="#F4F1E8"
-//         fontSize="65"
+//         fontSize="35"
 //         fontFamily="Bebas Neue"
 //       >
-//         GRS
-//       </text>
+//         EDENBACO
+//       </text> */}
 //     </svg>
 //   );
 // }

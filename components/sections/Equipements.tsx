@@ -350,7 +350,7 @@ export default function Equipements() {
                         alt={item.name}
                         width={160}
                         height={160}
-                        className="w-[160px] h-auto object-contain drop-shadow-[0_8px_20px_rgba(0,0,0,.08)]"
+                        className="object-contain drop-shadow-[0_8px_20px_rgba(0,0,0,.08)]"
                       />
                     </motion.div>
                   </div>

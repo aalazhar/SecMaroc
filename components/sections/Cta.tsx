@@ -678,25 +678,75 @@ const successVariants: Variants = {
 
 export default function CTA() {
   const [showForm, setShowForm] = useState(false);
-
   const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
 
-    // later:
-    // send data to API / Resend
-
-    setShowForm(false);
-
-    setTimeout(() => {
-      setSuccess(true);
-    }, 250);
-
-    setTimeout(() => {
-      setSuccess(false);
-    }, 3500);
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  
+    try {
+      const response = await fetch("/api/devis", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+  
+      console.log(data);
+  
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+  
+      setShowForm(false);
+  
+      setTimeout(() => {
+        setSuccess(true);
+      }, 250);
+  
+      setTimeout(() => {
+        setSuccess(false);
+      }, 3500);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  //   e.preventDefault();
+
+  //   // later:
+  //   // send data to API / Resend
+
+  //   setShowForm(false);
+
+  //   setTimeout(() => {
+  //     setSuccess(true);
+  //   }, 250);
+
+  //   setTimeout(() => {
+  //     setSuccess(false);
+  //   }, 3500);
+  // }
 
   return (
     <section
@@ -865,6 +915,9 @@ export default function CTA() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   placeholder="Nom complet"
                   className="
@@ -879,8 +932,11 @@ export default function CTA() {
                 />
 
                 <input
-                  required
+                  name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="Email"
                   className="
                     w-full
@@ -894,6 +950,9 @@ export default function CTA() {
                 />
 
                 <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   required
                   placeholder="Téléphone"
                   className="
@@ -908,6 +967,9 @@ export default function CTA() {
                 />
 
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   placeholder="Décrivez votre besoin"
                   className="
