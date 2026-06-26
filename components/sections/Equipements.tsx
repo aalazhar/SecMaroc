@@ -369,17 +369,21 @@ export default function Equipements() {
                 duration: 5,
                 ease: "easeInOut",
               }}
-              className="relative z-20"
+              className="relative z-20 flex items-center justify-center"
             >
-              <div className="absolute inset-0 bg-[#C8102E]/25 blur-[50px] rounded-full scale-125" />
+              {/* Red outer glow */}
+              <div className="absolute inset-0 rounded-full scale-125 bg-[#C8102E]/25 blur-[50px] z-0 opacity-30" />
+
+              {/* White inner glow */}
+              <div className="absolute w-24 h-24 rounded-full bg-white/80 blur-[35px] z-10" />
 
               <Image
-                src="/images/logo/shieldOfficial-filtered.png"
+                src="/images/logo/edenBacoShield.png"
                 alt="Eden Baco"
-                width={190}
-                height={190}
+                width={350}
+                height={350}
                 priority
-                className="relative w-[190px] h-auto drop-shadow-[0_0_40px_rgba(200,16,46,.15)] opacity-85"
+                className="relative z-20 w-[350px] h-auto opacity-75 mt-5"
               />
             </motion.div>
           </div>
