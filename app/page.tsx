@@ -45,11 +45,11 @@ export default function Home() {
 
         <Services />
 
-        <Equipements/>
-
         <WhyUs />
 
         <Clients />
+        
+        <Equipements />
 
         <CTA />
       </main>
