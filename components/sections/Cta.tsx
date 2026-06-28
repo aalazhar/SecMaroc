@@ -754,7 +754,7 @@ export default function CTA() {
       className="
         relative
         py-24
-        bg-dark
+        bg-[#023e8a]
         text-center
         overflow-hidden
       "

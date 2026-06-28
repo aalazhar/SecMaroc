@@ -14,7 +14,7 @@ export default function WhyPoint({ title, text, icon: Icon }: Props) {
       </div>
 
       <div>
-        <h3 className="font-bebas text-xl tracking-wide text-dark mb-2">
+        <h3 className="font-bebas text-xl tracking-wide text-[#023e8a] mb-2">
           {title}
         </h3>
 

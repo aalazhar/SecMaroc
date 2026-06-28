@@ -260,7 +260,7 @@ export default function Equipements() {
               Nos équipements
             </p>
 
-            <h2 className="font-bebas text-5xl md:text-6xl xl:text-7xl leading-none tracking-wide text-[#1E1E1C]">
+            <h2 className="font-bebas text-5xl md:text-6xl xl:text-7xl leading-none tracking-wide text-[#023e8a]">
               Équipés
               <br />
               pour protéger

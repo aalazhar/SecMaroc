@@ -91,7 +91,7 @@ export default function SectionHeader({
   md:text-6xl
   leading-none
   tracking-wide
-  text-dark
+  text-[#023e8a]
   "
       >
         {title}

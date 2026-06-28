@@ -30,7 +30,7 @@ export default function ServiceCard({
         <Icon className="w-6 h-6 text-[#C8102E]" strokeWidth={1.5} />
       </div>
 
-      <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-[#1E1E1C] mb-3">
+      <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-[#023e8a] mb-3">
         {title}
       </h3>
 

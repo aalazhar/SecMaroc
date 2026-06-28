@@ -51,7 +51,7 @@ export default function Clients() {
             <span className="w-7 h-px bg-red" />
           </p>
 
-          <h2 className="font-bebas text-5xl md:text-6xl leading-none tracking-wide text-dark">
+          <h2 className="font-bebas text-5xl md:text-6xl leading-none tracking-wide text-[#023e8a]">
             Des clients qui comptent sur nous
           </h2>
         </motion.div>

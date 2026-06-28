@@ -144,7 +144,7 @@ export default function Hero() {
               Sécurité privée • Surveillance • Gardiennage
             </div>
 
-            <h1 className="font-['Bebas_Neue'] text-[#1E1E1C] tracking-[2px] leading-[.95] text-6xl sm:text-7xl xl:text-[96px] mb-7 opacity-0 animate-[fadeUp_.8s_ease_.4s_forwards]">
+            <h1 className="font-['Bebas_Neue'] text-[#023e8a] tracking-[2px] leading-[.95] text-6xl sm:text-7xl xl:text-[96px] mb-7 opacity-0 animate-[fadeUp_.8s_ease_.4s_forwards]">
               Votre sécurité,
               <span className="block text-[#C8102E]">
                 notre mission
@@ -165,7 +165,7 @@ export default function Hero() {
               </Link>
 
               <Link href="#services">
-                <button className="px-9 py-4 border border-black/20 text-[#1E1E1C] uppercase tracking-[2px] text-xs font-semibold hover:bg-black/5 transition">
+                <button className="px-9 py-4 border bg-[#023e8a] border-black/20 text-white uppercase tracking-[2px] text-xs font-semibold hover:text-black hover:bg-black/5 transition">
                   Découvrir nos services
                 </button>
               </Link>
