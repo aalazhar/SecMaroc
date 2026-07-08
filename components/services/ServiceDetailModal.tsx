@@ -120,7 +120,6 @@ shadow-md
                 </p>
               </div>
             )}
-            ;
           </motion.div>
         </motion.div>
       )}
