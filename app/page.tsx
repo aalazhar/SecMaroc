@@ -21,40 +21,57 @@
 //     </main>
 //   );
 // }
-
+"use client";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import type { ServiceType } from "@/data/services";
+// import Hero from "@/components/hero";
 
-import Hero from "@/components/sections/Hero";
+// import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
-import Services from "@/components/sections/Services";
+// import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
 import Clients from "@/components/sections/Clients";
-import CTA from "@/components/sections/Cta";
 import Equipements from "@/components/sections/Equipements";
+import CTA from "@/components/sections/Cta";
+import Hero from "@/components/hero";
+import Divisions from "@/components/divisions";
+import Services from "@/components/services";
+import { useState } from "react";
+import { DevisModalProvider } from "@/components/cta/DevisModalContext";
+import DevisModal from "@/components/cta/DevisModal";
+// import Hero from "@/components/hero/Hero";
 
 export default function Home() {
+  const [activeService, setActiveService] = useState<ServiceType>("security");
   return (
     <>
-      <Navbar />
+        <Navbar />
 
-      <main>
-        <Hero />
+        <main>
+          <Hero onSelect={setActiveService} />
 
-        <Stats />
+          {/* <Divisions onSelect={setActiveService} /> */}
 
-        <Services />
+          <Stats />
 
-        <WhyUs />
+          <Services activeTab={activeService} setActiveTab={setActiveService} />
 
-        <Clients />
-        
-        <Equipements />
+          <WhyUs />
 
-        <CTA />
-      </main>
+          <Clients />
 
-      <Footer />
+          <Equipements />
+
+          <CTA />
+          {/* 
+
+
+
+*/}
+        </main>
+
+        <Footer />
     </>
   );
 }
