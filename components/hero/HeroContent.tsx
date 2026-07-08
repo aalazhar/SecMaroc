@@ -95,19 +95,26 @@ export default function HeroContent({ slide }: HeroContentProps) {
 
       <div
         className="
-          flex
-          flex-col
-          sm:flex-row
-          gap-4
-          mb-12
-          opacity-0
-          animate-[fadeUp_.8s_ease_.8s_forwards]
-        "
+    flex
+    flex-col
+    sm:flex-row
+    gap-4
+    mb-12
+    opacity-0
+    animate-[fadeUp_.8s_ease_.8s_forwards]
+  "
       >
-        <Button onClick={openModal}>{slide.actions.primary.label}</Button>
+        <Button onClick={openModal} className="w-full sm:w-auto">
+          {slide.actions.primary.label}
+        </Button>
 
-        <Link href={slide.actions.secondary.href} className="lg:hidden">
-          <Button variant="secondary">{slide.actions.secondary.label}</Button>
+        <Link
+          href={slide.actions.secondary.href}
+          className="w-full sm:w-auto lg:hidden"
+        >
+          <Button variant="secondary" className="w-full sm:w-auto">
+            {slide.actions.secondary.label}
+          </Button>
         </Link>
       </div>
     </div>

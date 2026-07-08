@@ -171,20 +171,21 @@ export default function DevisModal() {
                 aria-label="Fermer"
                 className="
                   absolute
-                  top-5
-                  right-5
+                  top-4
+                  right-4
+                  z-20
                   flex
-                  h-9
-                  w-9
+                  h-10
+                  w-10
                   items-center
                   justify-center
                   rounded-full
-                  text-[#1E1E1C]/50
+                  bg-white
+                  shadow-md
+                  text-[#1E1E1C]
                   transition-all
                   duration-300
                   hover:bg-[#0EA5E9]/10
-                  hover:text-[#1E1E1C]
-                  hover:rotate-90
                 "
               >
                 ✕
@@ -213,7 +214,7 @@ export default function DevisModal() {
                   disabled={isSubmitting}
                 />
 
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <Field
                     name="email"
                     type="email"
@@ -274,14 +275,7 @@ export default function DevisModal() {
                     disabled:hover:bg-[#C8102E]
                   "
                 >
-                  <span
-                    className="
-                      pointer-events-none absolute inset-0
-                      bg-gradient-to-r from-transparent via-white/25 to-transparent
-                      -translate-x-full group-hover:translate-x-full
-                      transition-transform duration-700 ease-out
-                    "
-                  />
+                  <span className="absolute inset-0 transition-transform duration-700 ease-out -translate-x-full pointer-events-none bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full" />
                   <span className="relative flex items-center justify-center gap-2">
                     {isSubmitting ? (
                       <>
@@ -458,24 +452,7 @@ function Toast({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, x: 60, scale: 0.9, transition: { duration: 0.25 } }}
       transition={{ type: "spring", stiffness: 300, damping: 26 }}
-      className="
-        pointer-events-auto
-        relative
-        w-full
-        max-w-sm
-        overflow-hidden
-        rounded-2xl
-        border
-        bg-white/90
-        backdrop-blur-md
-        shadow-xl
-        shadow-black/10
-        p-4
-        pr-11
-        flex
-        items-start
-        gap-3
-      "
+      className="relative flex items-start w-full max-w-sm gap-3 p-4 overflow-hidden border shadow-xl pointer-events-auto rounded-2xl bg-white/90 backdrop-blur-md shadow-black/10 pr-11"
       style={{
         borderColor: isSuccess
           ? "rgba(14,165,233,0.25)"
@@ -485,7 +462,7 @@ function Toast({
       {/* aurora glow tint */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
+        className="absolute inset-0 pointer-events-none opacity-60"
         style={{
           background: isSuccess
             ? "radial-gradient(circle at 0% 0%, rgba(14,165,233,0.08), transparent 60%)"
@@ -494,7 +471,7 @@ function Toast({
       />
 
       <span
-        className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
+        className="relative flex items-center justify-center rounded-full h-9 w-9 shrink-0"
         style={{
           background: isSuccess
             ? "linear-gradient(135deg, #0EA5E9, #023E8A)"
@@ -528,7 +505,9 @@ function Toast({
           transition-colors
           duration-200
           hover:bg-black/5
-          hover:text-[#1E1E1C]/60
+          hover:text-[#1E1E1C]/60 z-20
+bg-white
+shadow-md
         "
       >
         ✕

@@ -52,12 +52,7 @@ export default function Navbar() {
     >
       <Container>
         <div
-          className="
-            flex
-            h-24
-            items-center
-            justify-between
-          "
+          className="flex items-center justify-between h-24 "
         >
           {/* LOGO */}
 
@@ -72,12 +67,7 @@ export default function Navbar() {
           {/* DESKTOP */}
 
           <nav
-            className="
-              hidden
-              lg:flex
-              items-center
-              gap-9
-            "
+            className="items-center hidden  lg:flex gap-9"
           >
             {navigation.map((item) => (
               <NavLink key={item.href} {...item} />
@@ -87,10 +77,7 @@ export default function Navbar() {
           {/* CTA */}
 
           <div
-            className="
-              hidden
-              lg:block
-            "
+            className="hidden  lg:block"
           >
             <Button onClick={openModal}>Demander un devis</Button>
           </div>
@@ -163,12 +150,7 @@ export default function Navbar() {
           `}
         >
           <nav
-            className="
-              flex
-              flex-col
-              gap-5
-              pt-5
-            "
+            className="flex flex-col gap-5 pt-5 "
           >
             {navigation.map((item, i) => (
               <Link
@@ -196,9 +178,15 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <Link href="#contact" onClick={closeMenu}>
-              <Button className="w-full">Obtenir un devis</Button>
-            </Link>
+            <Button
+              className="w-full"
+              onClick={() => {
+                closeMenu();
+                openModal();
+              }}
+            >
+              Obtenir un devis
+            </Button>
           </nav>
         </div>
       </Container>

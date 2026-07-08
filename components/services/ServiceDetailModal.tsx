@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Service } from "@/data/services";
 
@@ -36,7 +36,6 @@ export default function ServiceDetailModal({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-[#0EA5E9] to-[#C8102E]" />
-
             <div
               aria-hidden
               className="
@@ -45,19 +44,19 @@ export default function ServiceDetailModal({
                 blur-3xl animate-glow-pulse
               "
             />
-
             <button
               onClick={onClose}
               aria-label="Fermer"
               className="
                 absolute top-5 right-5 flex h-9 w-9 items-center justify-center
                 rounded-full text-[#1E1E1C]/50 transition-all duration-300
-                hover:bg-[#0EA5E9]/10 hover:text-[#1E1E1C] hover:rotate-90
+                hover:bg-[#0EA5E9]/10 hover:text-[#1E1E1C] hover:rotate-90 z-20
+bg-white
+shadow-md
               "
             >
               ✕
             </button>
-
             <div className="relative flex items-center gap-4 mb-6">
               <span
                 className="
@@ -65,7 +64,7 @@ export default function ServiceDetailModal({
                   bg-gradient-to-br from-[#023E8A] to-[#0EA5E9] shadow-md shadow-[#0EA5E9]/20
                 "
               >
-                {Icon && <Icon className="h-7 w-7 text-white" />}
+                {Icon && <Icon className="text-white h-7 w-7" />}
               </span>
               <div>
                 <p className="uppercase tracking-[4px] text-xs font-semibold text-[#C8102E]">
@@ -76,19 +75,16 @@ export default function ServiceDetailModal({
                 </h3>
               </div>
             </div>
-
             <p className="relative text-sm font-semibold text-[#1E1E1C] mb-4">
               {service.details.tagline}
             </p>
-
-            <div className="relative space-y-3 mb-6">
+            <div className="relative mb-6 space-y-3">
               {service.details.paragraphs.map((p, i) => (
                 <p key={i} className="text-sm leading-6 text-[#1E1E1C]/70">
                   {p}
                 </p>
               ))}
             </div>
-
             {service.details.highlights.length > 0 && (
               <ul className="relative space-y-2.5 mb-6">
                 {service.details.highlights.map((h, i) => (
@@ -114,7 +110,6 @@ export default function ServiceDetailModal({
                 ))}
               </ul>
             )}
-
             {service.details.extra && (
               <div className="relative rounded-xl border border-[#0EA5E9]/15 bg-white/70 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[2px] text-[#0EA5E9] mb-1">
@@ -124,7 +119,8 @@ export default function ServiceDetailModal({
                   {service.details.extra.text}
                 </p>
               </div>
-            )};
+            )}
+            ;
           </motion.div>
         </motion.div>
       )}
