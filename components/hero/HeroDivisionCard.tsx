@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { Division } from "@/data/divisions";
@@ -10,11 +9,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export default function HeroDivisionCard({
-  division,
-  index,
-  onClick,
-}: Props) {
+export default function HeroDivisionCard({ division, index, onClick }: Props) {
   return (
     <motion.button
       onClick={onClick}
@@ -73,9 +68,7 @@ export default function HeroDivisionCard({
             {division.subtitle}
           </p>
 
-          <h3 className="text-2xl font-bold text-white">
-            {division.title}
-          </h3>
+          <h3 className="text-2xl font-bold text-white">{division.title}</h3>
         </div>
 
         <p className="text-sm leading-7 text-neutral-400">
@@ -111,7 +104,6 @@ export default function HeroDivisionCard({
           "
         >
           Découvrir
-
           <ArrowRight
             size={18}
             className="

@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { AnimatePresence, motion } from "framer-motion";
 import type { Service } from "@/data/services";
 
@@ -8,7 +7,10 @@ interface ServiceDetailModalProps {
   onClose: () => void;
 }
 
-export default function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
+export default function ServiceDetailModal({
+  service,
+  onClose,
+}: ServiceDetailModalProps) {
   const Icon = service?.icon;
 
   return (
@@ -90,9 +92,22 @@ export default function ServiceDetailModal({ service, onClose }: ServiceDetailMo
             {service.details.highlights.length > 0 && (
               <ul className="relative space-y-2.5 mb-6">
                 {service.details.highlights.map((h, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-[#1E1E1C]/80">
-                    <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 h-4 w-4 shrink-0 text-[#0EA5E9]" strokeWidth="2.5">
-                      <path d="M5 13l4 4L19 7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 text-sm text-[#1E1E1C]/80"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-[#0EA5E9]"
+                      strokeWidth="2.5"
+                    >
+                      <path
+                        d="M5 13l4 4L19 7"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                     {h}
                   </li>
@@ -105,20 +120,11 @@ export default function ServiceDetailModal({ service, onClose }: ServiceDetailMo
                 <p className="text-xs font-semibold uppercase tracking-[2px] text-[#0EA5E9] mb-1">
                   {service.details.extra.label}
                 </p>
-                <p className="text-sm text-[#1E1E1C]/70">{service.details.extra.text}</p>
+                <p className="text-sm text-[#1E1E1C]/70">
+                  {service.details.extra.text}
+                </p>
               </div>
-            )}
-
-            {/* <button
-              onClick={onClose}
-              className="
-                relative mt-8 w-full rounded-xl bg-[#C8102E] text-white font-semibold
-                uppercase tracking-[2px] text-xs p-4 shadow-md shadow-[#C8102E]/20
-                transition-all duration-300 hover:bg-[#a90d26] hover:shadow-lg hover:shadow-[#C8102E]/30
-              "
-            >
-              Demander un devis pour ce service
-            </button> */}
+            )};
           </motion.div>
         </motion.div>
       )}

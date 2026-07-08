@@ -1,115 +1,12 @@
-// "use client";
-
-// import { AnimatePresence, motion } from "framer-motion";
-// import { useDevisModal } from "./DevisModalContext";
-// import { useState } from "react";
-
-// export default function DevisModal() {
-//   const { open, closeModal } = useDevisModal();
-
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     message: "",
-//   });
-
-//   function handleChange(
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-//   ) {
-//     const { name, value } = e.target;
-//     setFormData((prev) => ({ ...prev, [name]: value }));
-//   }
-
-//   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-//     e.preventDefault();
-
-//     await fetch("/api/devis", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(formData),
-//     });
-
-//     closeModal();
-//   }
-
-//   return (
-//     <AnimatePresence>
-//       {open && (
-//         <motion.div
-//           className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4"
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           exit={{ opacity: 0 }}
-//         >
-//           <motion.div
-//             className="w-full max-w-2xl bg-[#F4F1E8] p-8 relative"
-//             initial={{ scale: 0.9, y: 30 }}
-//             animate={{ scale: 1, y: 0 }}
-//             exit={{ scale: 0.9, y: 30 }}
-//           >
-//             {/* close */}
-//             <button
-//               onClick={closeModal}
-//               className="absolute top-4 right-4 text-black/50"
-//             >
-//               ✕
-//             </button>
-
-//             <h3 className="font-bebas text-4xl mb-6 text-[#1E1E1C]">
-//               Demande de devis
-//             </h3>
-
-//             <form onSubmit={handleSubmit} className="space-y-4">
-//               <input
-//                 name="name"
-//                 placeholder="Nom complet / Raison social"
-//                 onChange={handleChange}
-//                 className="w-full p-4 border"
-//               />
-
-//               <input
-//                 name="email"
-//                 placeholder="Email"
-//                 onChange={handleChange}
-//                 className="w-full p-4 border"
-//               />
-
-//               <input
-//                 name="phone"
-//                 placeholder="Téléphone"
-//                 onChange={handleChange}
-//                 className="w-full p-4 border"
-//               />
-
-//               <textarea
-//                 name="message"
-//                 placeholder="Message"
-//                 onChange={handleChange}
-//                 className="w-full p-4 border min-h-[120px]"
-//               />
-
-//               <button
-//                 type="submit"
-//                 className="w-full bg-[#C8102E] text-white p-4"
-//               >
-//                 Envoyer
-//               </button>
-//             </form>
-//           </motion.div>
-//         </motion.div>
-//       )}
-//     </AnimatePresence>
-//   );
-// }
-
 "use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useDevisModal } from "./DevisModalContext";
-import { devisSchema, type DevisFormData, type DevisFormErrors } from "@/lib/validations";
-// import { devisSchema, type DevisFormData, type DevisFormErrors } from "@/lib/validations/devis";
+import {
+  devisSchema,
+  type DevisFormData,
+  type DevisFormErrors,
+} from "@/lib/validations";
 
 type ToastVariant = "success" | "error";
 
@@ -153,9 +50,9 @@ export default function DevisModal() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     const { name, value } = e.target;
-    setFormData((prev : any) => ({ ...prev, [name]: value }));
+    setFormData((prev: any) => ({ ...prev, [name]: value }));
     if (errors[name as keyof DevisFormData]) {
-      setErrors((prev : any) => ({ ...prev, [name]: undefined }));
+      setErrors((prev: any) => ({ ...prev, [name]: undefined }));
     }
   }
 
@@ -302,7 +199,11 @@ export default function DevisModal() {
                 Demande de devis
               </h3>
 
-              <form onSubmit={handleSubmit} noValidate className="relative space-y-5">
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                className="relative space-y-5"
+              >
                 <Field
                   name="name"
                   label="Nom complet / Raison sociale"
@@ -409,7 +310,9 @@ interface FieldProps {
   name: keyof DevisFormData;
   label: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   error?: string;
   disabled?: boolean;
   type?: string;
@@ -651,7 +554,12 @@ function Toast({
 
 function CheckIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="w-4.5 h-4.5 text-white" strokeWidth="2.5">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className="w-4.5 h-4.5 text-white"
+      strokeWidth="2.5"
+    >
       <path
         d="M5 13l4 4L19 7"
         stroke="currentColor"
@@ -667,12 +575,20 @@ function ErrorIcon({ light = false }: { light?: boolean }) {
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      className={`w-3.5 h-3.5 shrink-0 ${light ? "w-4.5 h-4.5 text-white" : "text-[#C8102E]"}`}
+      className={`w-3.5 h-3.5 shrink-0 ${
+        light ? "w-4.5 h-4.5 text-white" : "text-[#C8102E]"
+      }`}
       strokeWidth="2.5"
     >
       <circle cx="12" cy="12" r="9" stroke="currentColor" />
       <path d="M12 8v5" stroke="currentColor" strokeLinecap="round" />
-      <circle cx="12" cy="16" r="0.5" fill="currentColor" stroke="currentColor" />
+      <circle
+        cx="12"
+        cy="16"
+        r="0.5"
+        fill="currentColor"
+        stroke="currentColor"
+      />
     </svg>
   );
 }
