@@ -6,6 +6,7 @@ import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { navigation } from "@/data/navigation";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,14 +52,16 @@ export default function Navbar() {
       `}
     >
       <Container>
-        <div
-          className="flex items-center justify-between h-24 "
-        >
+        <div className="flex items-center justify-between h-24 ">
           {/* LOGO */}
 
           <Link
             href="#hero"
-            onClick={closeMenu}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#hero".slice(1));
+              closeMenu();
+            }}
             className="transition-transform duration-300 hover:scale-[1.03]"
           >
             <Logo src="/images/logo/EdenLogoOfficial.png" />
@@ -66,9 +69,7 @@ export default function Navbar() {
 
           {/* DESKTOP */}
 
-          <nav
-            className="items-center hidden  lg:flex gap-9"
-          >
+          <nav className="items-center hidden lg:flex gap-9">
             {navigation.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
@@ -76,9 +77,7 @@ export default function Navbar() {
 
           {/* CTA */}
 
-          <div
-            className="hidden  lg:block"
-          >
+          <div className="hidden lg:block">
             <Button onClick={openModal}>Demander un devis</Button>
           </div>
 
@@ -149,14 +148,16 @@ export default function Navbar() {
             ${open ? "max-h-[500px] pb-6 opacity-100" : "max-h-0 opacity-0"}
           `}
         >
-          <nav
-            className="flex flex-col gap-5 pt-5 "
-          >
+          <nav className="flex flex-col gap-5 pt-5 ">
             {navigation.map((item, i) => (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={closeMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href.slice(1));
+                  closeMenu();
+                }}
                 style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
                 className={`
                   uppercase
@@ -198,6 +199,10 @@ function NavLink({ label, href }: { label: string; href: string }) {
   return (
     <Link
       href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToSection(href.slice(1));
+      }}
       className="
         group
         relative

@@ -2,19 +2,36 @@
 import Logo from "@/components/ui/Logo";
 import { PhoneIcon, MailIcon, LocationIcon } from "@/components/icons";
 import { motion, Variants } from "framer-motion";
+import { ServiceType } from "@/data/services";
+import { scrollToSection } from "@/lib/scrollToSection";
+import Link from "next/link";
 
-const services = [
-  "Solution de sécurité",
-  "Agents de sécurité",
-  "Sécurité rapprochée",
-  "Sécurité événementielle",
-  "Télésurveillance",
-  "Maître-chien",
+interface Props {
+  onSelect: (type: ServiceType) => void;
+}
+
+const services: { label: string; division: ServiceType }[] = [
+  { label: "Gardiennage & Surveillance 24/7", division: "security" },
+  { label: "Agents de Sécurité", division: "security" },
+  { label: "Sécurité Cynophile", division: "security" },
+  { label: "Intervention Rapide", division: "security" },
+  { label: "Sécurité Événementielle", division: "security" },
+  { label: "Contrôle d'Accès & Secteur Public", division: "security" },
+  { label: "Nettoyage secteur tertiaire", division: "cleaning" },
+  { label: "Nettoyage industriel", division: "cleaning" },
+  { label: "Collectivités & Écoles", division: "cleaning" },
+  { label: "Surfaces commerciales", division: "cleaning" },
+  { label: "Dératisation", division: "cleaning" },
+  { label: "Entretien d'immeubles", division: "cleaning" },
 ];
 
 const cities = [
   {
     name: "Casablanca",
+    mapUrl: "https://www.google.com/maps?q=33.679694,-7.400944",
+  },
+  {
+    name: "Mohammedia",
     mapUrl: "https://www.google.com/maps?q=33.679694,-7.400944",
   },
 ];
@@ -42,7 +59,17 @@ const linkVariants: Variants = {
   },
 };
 
-export default function Footer() {
+export default function Footer({ onSelect }: Props) {
+  const handleSelect = (type: ServiceType) => {
+    onSelect(type);
+
+    setTimeout(() => {
+      document.getElementById("services")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 120);
+  };
+
   return (
     <footer className="relative bg-[#F0F6FC] py-16 px-6 border-t border-[#0EA5E9]/10 overflow-hidden">
       {/* top accent line */}
@@ -89,9 +116,16 @@ export default function Footer() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div variants={columnVariants}>
-          <div className="w-fit transition-transform duration-300 hover:scale-[1.03]">
+          <Link
+            href={"#hero"}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#hero".slice(1));
+            }}
+            className="w-fit transition-transform duration-300 hover:scale-[1.03] cursor-pointer"
+          >
             <Logo src="/images/logo/EdenLogoOfficial.png" />
-          </div>
+          </Link>
 
           <div className="mt-6 space-y-3 text-sm text-[#1E1E1C]/50">
             <div className="group flex gap-3 items-center transition-colors duration-300 hover:text-[#1E1E1C]">
@@ -120,7 +154,6 @@ export default function Footer() {
             </div>
           </div>
         </motion.div>
-
         <motion.div variants={columnVariants}>
           <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
             Services
@@ -133,19 +166,20 @@ export default function Footer() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            {services.map((item) => (
-              <motion.li
-                key={item}
-                variants={linkVariants}
-                className="group relative w-fit text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300 cursor-pointer"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0EA5E9] transition-all duration-300 group-hover:w-full" />
+            {services.map((service) => (
+              <motion.li key={service.label} variants={linkVariants}>
+                <button
+                  type="button"
+                  onClick={() => handleSelect(service.division)}
+                  className="group relative w-fit text-left text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300 cursor-pointer"
+                >
+                  {service.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0EA5E9] transition-all duration-300 group-hover:w-full" />
+                </button>
               </motion.li>
             ))}
           </motion.ul>
         </motion.div>
-
         <motion.div variants={columnVariants}>
           <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
             Agences
@@ -167,24 +201,57 @@ export default function Footer() {
             ))}
           </ul>
         </motion.div>
+        {/* <motion.div variants={columnVariants}>
+          <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
+            Entreprise
+          </h4>
 
+          <ul className="space-y-3">
+            {[
+              { label: "Qui sommes-nous", href: "#hero" },
+              { label: "Nos équipements", href: "#equipements" },
+              { label: "Nos clients", href: "#clients" },
+              { label: "Contact", href: "#contact" },
+            ].map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="group relative w-fit block text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0EA5E9] transition-all duration-300 group-hover:w-full" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div> */}
         <motion.div variants={columnVariants}>
           <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
             Entreprise
           </h4>
 
           <ul className="space-y-3">
-            {["Qui sommes-nous", "Nos clients", "Contact"].map(
-              (item) => (
-                <li
-                  key={item}
-                  className="group relative w-fit text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300 cursor-pointer"
+            {[
+              { label: "Qui sommes-nous", href: "#hero" },
+              { label: "Pourquoi nous choisir", href: "#pourquoi" },
+              { label: "Nos équipements", href: "#equipements" },
+              { label: "Nos clients", href: "#clients" },
+              { label: "Contact", href: "#contact" },
+            ].map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href.slice(1));
+                  }}
+                  className="group relative w-fit block text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0EA5E9] transition-all duration-300 group-hover:w-full" />
-                </li>
-              )
-            )}
+                </a>
+              </li>
+            ))}
           </ul>
         </motion.div>
       </motion.div>
