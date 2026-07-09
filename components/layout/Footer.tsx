@@ -201,30 +201,6 @@ export default function Footer({ onSelect }: Props) {
             ))}
           </ul>
         </motion.div>
-        {/* <motion.div variants={columnVariants}>
-          <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
-            Entreprise
-          </h4>
-
-          <ul className="space-y-3">
-            {[
-              { label: "Qui sommes-nous", href: "#hero" },
-              { label: "Nos équipements", href: "#equipements" },
-              { label: "Nos clients", href: "#clients" },
-              { label: "Contact", href: "#contact" },
-            ].map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="group relative w-fit block text-sm text-[#1E1E1C]/40 hover:text-[#0EA5E9] transition-colors duration-300"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0EA5E9] transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div> */}
         <motion.div variants={columnVariants}>
           <h4 className="font-bebas text-xl tracking-wide text-[#1E1E1C] mb-5">
             Entreprise

@@ -220,7 +220,7 @@ function WhySlideshow() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -30 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 z-10 p-9 flex flex-col justify-center"
+            className="absolute inset-0 z-10 flex flex-col justify-center p-9"
           >
             <p className="text-xs font-semibold uppercase tracking-[3px] text-[#0EA5E9] mb-2">
               {slide.eyebrow}
@@ -324,7 +324,7 @@ export default function WhyUs() {
       />
 
       <Container>
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <div>
