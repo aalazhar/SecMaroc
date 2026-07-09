@@ -15,9 +15,10 @@ const geistSans = Geist({
 // ── Constants ─────────────────────────────────────────────────────────────────
 const BASE_URL = "https://sec-maroc.vercel.app"; // ← swap for edenbaco.ma at launch
 const SITE_NAME = "EDENBACO";
-const DEFAULT_TITLE = "EDENBACO | Agence de Sécurité et Gardiennage au Maroc";
+const DEFAULT_TITLE =
+  "EDENBACO | Sécurité Privée, Gardiennage & Nettoyage Professionnel au Maroc";
 const DEFAULT_DESC =
-  "EDENBACO est une agence spécialisée dans la sécurité privée, le gardiennage et la protection des biens et des personnes au Maroc. Solutions de sécurité fiables et professionnelles.";
+  "EDENBACO accompagne les entreprises et collectivités au Maroc avec des services de sécurité privée, gardiennage, agents de sécurité, nettoyage professionnel, nettoyage industriel, entretien d'immeubles, dératisation et désinfection.";
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
@@ -36,22 +37,35 @@ export const metadata: Metadata = {
 
   // ── Keywords ──
   keywords: [
+    // Brand
     "EDENBACO",
+
+    // Security
     "agence de sécurité Maroc",
     "gardiennage Maroc",
     "sécurité privée Maroc",
     "agents de sécurité",
-    "protection des biens",
-    "sécurité entreprise Maroc",
-    "sécurité événementielle Maroc",
-    "télésurveillance Maroc",
-    "protection rapprochée",
-    "maître-chien Maroc",
+    "sécurité événementielle",
+    "surveillance 24/7",
+    "maître chien Maroc",
+    "contrôle d'accès",
+
+    // Cleaning
+    "nettoyage professionnel Maroc",
+    "entreprise de nettoyage",
+    "nettoyage bureaux",
+    "nettoyage industriel",
+    "nettoyage commerces",
+    "entretien immeubles",
+    "désinfection",
+    "dératisation",
+    "collecte déchets",
+
+    // Local
     "Casablanca",
-    "Marrakech",
     "Rabat",
+    "Marrakech",
     "Agadir",
-    "sécurité Maroc",
   ],
 
   // ── Authors & creator ──
@@ -94,7 +108,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Agence de sécurité privée au Maroc`,
+        alt: `${SITE_NAME} — Sécurité privée et nettoyage professionnel au Maroc`,
         type: "image/png",
       },
     ],
@@ -209,15 +223,15 @@ const jsonLd = {
       ],
       areaServed: [
         { "@type": "City", name: "Casablanca" },
-        { "@type": "City", name: "Marrakech" },
-        { "@type": "City", name: "Rabat" },
-        { "@type": "City", name: "Agadir" },
+        { "@type": "City", name: "Mohammedia" },
         { "@type": "Country", name: "Morocco" },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Services de sécurité",
+        name: "Services professionnels",
         itemListElement: [
+          // SECURITY
+
           {
             "@type": "Offer",
             itemOffered: {
@@ -225,6 +239,15 @@ const jsonLd = {
               name: "Gardiennage et surveillance",
             },
           },
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Agents de sécurité",
+            },
+          },
+
           {
             "@type": "Offer",
             itemOffered: {
@@ -232,23 +255,46 @@ const jsonLd = {
               name: "Sécurité événementielle",
             },
           },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Protection rapprochée" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Télésurveillance" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Maître-chien" },
-          },
+
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Transport avec chauffeur privé",
+              name: "Sécurité cynophile",
+            },
+          },
+
+          // CLEANING
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Nettoyage de bureaux",
+            },
+          },
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Nettoyage industriel",
+            },
+          },
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Entretien d'immeubles",
+            },
+          },
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Dératisation et désinfection",
             },
           },
         ],
@@ -290,7 +336,7 @@ export default function RootLayout({
         <meta name="ICBM" content="33.5731, -7.5898" />
       </head>
 
-      <body className="min-h-full flex flex-col">
+      <body className="flex flex-col min-h-full">
         <DevisModalProvider>
           {children}
           <DevisModal />
