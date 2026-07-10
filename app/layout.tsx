@@ -63,9 +63,7 @@ export const metadata: Metadata = {
 
     // Local
     "Casablanca",
-    "Rabat",
-    "Marrakech",
-    "Agadir",
+    "Mohammedia",
   ],
 
   // ── Authors & creator ──
@@ -171,7 +169,7 @@ const jsonLd = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+212-661-370-673",
+          telephone: "+212-662-363-866",
           contactType: "customer service",
           availableLanguage: ["French", "Arabic"],
           hoursAvailable: "Mo-Su 00:00-23:59",
@@ -186,7 +184,7 @@ const jsonLd = {
       name: SITE_NAME,
       description: DEFAULT_DESC,
       url: BASE_URL,
-      telephone: "00212662363866",
+      telephone: "+212662363866",
       email: "contact@edenbaco.ma",
       priceRange: "$$",
       currenciesAccepted: "MAD",
