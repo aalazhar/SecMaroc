@@ -186,7 +186,7 @@ const jsonLd = {
       name: SITE_NAME,
       description: DEFAULT_DESC,
       url: BASE_URL,
-      telephone: "+212-661-370-673",
+      telephone: "00212662363866",
       email: "contact@edenbaco.ma",
       priceRange: "$$",
       currenciesAccepted: "MAD",
@@ -194,7 +194,7 @@ const jsonLd = {
       image: OG_IMAGE,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Casablanca", // ← update with real address
+        streetAddress: "HAY SALAM 1 GROUPE A, RUE 915 AHL LOUGHLAM 20000, CASABLANCA", 
         addressLocality: "Casablanca",
         addressRegion: "Grand Casablanca",
         postalCode: "20000",
@@ -202,8 +202,8 @@ const jsonLd = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 33.5731, // ← update with real coords
-        longitude: -7.5898,
+        latitude: 33.679694, 
+        longitude: -7.400944,
       },
       openingHoursSpecification: [
         {
